@@ -6,9 +6,8 @@ import Image from 'next/image';
 export default function Studio() {
     return (
         <section className='flex-row items-end padding section section-end xl:items-end about'>
-            <div className="h-screen flex">
-                <div className="flex h-screen items-end">
-                    <div className="relative z-10 grid md:grid-cols-5 items-center xl:items-start  gap-y-16 h-s xl:mt-auto">
+
+                    <div className="relative z-10 grid md:grid-cols-5 items-center xl:items-start gap-y-16 h-s xl:mt-auto">
                         <div className="md:col-span-3">
                             <WordPullUp
                                 words='ABOUT THE STUDIO'
@@ -41,8 +40,7 @@ export default function Studio() {
                                 className='object-top h-64 md:h-[500px] lg:h-[550px] md:max-h-full max-h-80 w-auto ' />
                         </div>
                     </div>
-                </div>
-            </div>
+
         </section>
     )
 }

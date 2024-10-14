@@ -16,7 +16,9 @@ export default function Navbar() {
     const [state, setState] = React.useState<boolean>(false)
 
     useGSAP(() => {
-        gsap.to('#menu', {
+        gsap.fromTo('#menu', {
+            translateY: -500,
+        }, {
             translateY: 0,
             duration: 1,
             ease: 'power3.in'
@@ -26,7 +28,7 @@ export default function Navbar() {
     return (
         <nav
             id='menu'
-            className={`fixed z-50 inset-x-0 transition-transform ease-in-out duration-500 top-0 md:top-3 xl:top-7 -translate-y-96 padding`}>
+            className={`fixed z-50 inset-x-0 transition-transform ease-in-out duration-500 top-0 md:top-3 xl:top-7 padding xl:px-36`}>
             <div
                 className='relative mx-auto h-32 flex items-center'>
                 <div className='relative z-10 flex items-center justify-between w-full'>

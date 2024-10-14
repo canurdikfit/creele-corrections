@@ -1,5 +1,6 @@
 import RectangleBtn from './../../assets/artifacts/rectangular_btn.png';
 import ProjectCard from './../../assets/images/project_image.png';
+import ProjectCard2 from './../../assets/artifacts/connect.png';
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCards, Autoplay } from 'swiper/modules';
 import 'swiper/css/effect-cards';
@@ -15,6 +16,12 @@ const ProjectLoaded = [
         content: 'A vigorous and compelling tale of African origin about two brothers fighting for the power to create a world using an all-powerful “Satchel”. A drama-filled, entertaining story sure to leave you at the edge of your screen! Taking you to the mystical lands of “The Satchel”',
         img: ProjectCard,
         url: '/satchel'
+    },
+    {
+        title: 'Connect',
+        content: 'Unconditional love between parents and children can sometimes be hard to maintain, as seen in this musical about a strict father and his rebellious son.',
+        img: ProjectCard2,
+        url: '/connect'
     }
 ]
 
@@ -41,7 +48,7 @@ export default function ProjectCarousel() {
                         ease: 'linear',
                         duration: .5
                     }}
-                    className='relative inline-block after:absolute after:bottom-0 after:w-[35%] after:h-1 after:left-0 after:bg-[#FBD40D] after:rounded md:mb-4 md:text-6xl'>
+                    className='relative inline-block after:absolute after:bottom-0 after:w-[35%] after:h-1 after:left-0 after:bg-[#FBD40D] after:rounded md:mb-4'>
                     {ProjectLoaded[activeIndex].title}
                 </motion.h2>
                 <motion.p
@@ -87,7 +94,7 @@ export default function ProjectCarousel() {
                 </Link>
             </div>
             <div className="justify-center h-full md:flex order-1 md:order-2">
-                <div className='flex items-center justify-center w-full'>
+                <div className='flex items-center justify-center w-full '>
                     <div className='space-y-5'>
                         <Swiper
                             effect={'cards'}
@@ -104,7 +111,7 @@ export default function ProjectCarousel() {
                             grabCursor={true}
                             onSlideChange={onSwiperChange}
                             modules={[EffectCards, Autoplay]}
-                            className="w-fit xl:max-w-[450px]"
+                            className="max-w-80 xl:max-w-[450px] overflow-visible"
                         >
                             {
                                 ProjectLoaded.map((item, idx) => {
@@ -114,7 +121,7 @@ export default function ProjectCarousel() {
                                                 src={item.img}
                                                 alt='Project Card'
                                                 sizes='100%'
-                                                className='object-contain object-center h-[35vh] lg:h-[400px] xl:h-[450px] mx-auto'
+                                                className='object-contain object-center h-[35vh] lg:h-[400px] xl:h-[500px] mx-auto'
                                             />
                                         </SwiperSlide>
                                     )

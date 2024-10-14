@@ -3,9 +3,20 @@ import Navbar from '../components/Navbar'
 import ReactFullpage from '@fullpage/react-fullpage'
 import ContactC from '../components/contact/Contact';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 
 export default function Contact() {
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (window.fullpage_api) {
+                window.fullpage_api.moveTo(1);
+            }
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <>
             <Navbar />

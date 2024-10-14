@@ -13,11 +13,9 @@ export default function OurProjects(props: {
     projectUrl: string
 }) {
     return (
-        <div className='padding xl:items-end pt-32 items-center flex md:pb-24 pb-16 justify-end w-screen min-h-screen'>
-
-
+        <div className='padding xl:items-end pt-32 items-center flex md:pb-24 pb-16 justify-center w-screen min-h-screen'>
             <HeadingOverlay label='OUR PROJECTS' />
-            <div className="relative z-10 grid items-end justify-center md:grid-cols-2 w-full md:gap-y-16 gap-5 max-[80vh] md:mt-0">
+            <div className="relative z-10 grid items-end md:items-center justify-center md:grid-cols-2 w-full md:gap-y-16 gap-5 max-h-[80vh] md:mt-0">
 
                 <div className='space-y-3 relative z-10 order-2 md:order-1'>
                     {
@@ -106,7 +104,7 @@ export default function OurProjects(props: {
                         src={props.image}
                         alt='Project'
                         sizes='100%'
-                        className='object-contain object-center h-[35vh] lg:h-[400px] xl:h-[450px] mx-auto'
+                        className='object-contain object-center h-[35vh] lg:h-[400px] xl:h-[500px] mx-auto'
                     />
 
 

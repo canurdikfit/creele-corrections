@@ -9,25 +9,11 @@ export default function OurServices(props: {
     image: StaticImageData
 }) {
     return (
-        <section className='padding section serv lg:pb-20 about_sections'>
+        <section className='padding section service h-screen serv flex items-center  lg:pb-20 xl:pb-0 about_sections'>
             <HeadingOverlay label='Our Services' />
-            <div className="relative z-10 space-y-5 md:space-y-10 xl:space-y-5">
-                <motion.h2
-                    initial={{
-                        translateY: 100,
-                        opacity: 0
-                    }}
-                    whileInView={{
-                        translateY: 0,
-                        opacity: 1,
-                    }}
-                    transition={{
-                        ease: 'linear',
-                        duration: .5
-                    }}
-                    className='text-center'>Our Services</motion.h2>
 
-                <div className="grid md:grid-cols-5 items-center gap-y-5 md:gap-y-10">
+
+                <div className="grid md:grid-cols-5 h-fit items-center gap-y-5 md:gap-y-10">
                     <div className="md:col-span-2 flex items-center md:justify-end justify-center overflow-visible">
                         <motion.div
                             initial={{
@@ -43,7 +29,7 @@ export default function OurServices(props: {
                                 duration: .5,
                                 delay: .2
                             }}
-                            className="max-w-sm h-64 md:h-60 lg:h-96 mx-auto relative ">
+                            className="max-w-sm h-64 md:h-60 lg:h-96 xl:h-[450px] mx-auto relative">
                             <Image
                                 src={props.image}
                                 sizes='100%'
@@ -55,7 +41,7 @@ export default function OurServices(props: {
                         </motion.div>
 
                     </div>
-                    <div className="md:col-span-3 space-y-2 md:space-y-5 text-center md:text-left">
+                    <div className="md:col-span-3 h-fit space-y-2 md:space-y-5 text-center md:text-left">
                         <motion.h4 initial={{
                             translateY: 100,
                             opacity: 0
@@ -69,7 +55,7 @@ export default function OurServices(props: {
                                 duration: .5,
                                 delay: .4
                             }}
-                            className='md:text-4xl text-2xl max-w-md'>
+                            className='xl:text-5xl md:text-4xl text-2xl max-w-md xl:max-w-2xl'>
                             {props.heading}
                         </motion.h4>
                         <motion.p
@@ -90,9 +76,8 @@ export default function OurServices(props: {
                             {props.content}
                         </motion.p>
                     </div>
-
                 </div>
-            </div>
+ 
         </section>
     )
 }

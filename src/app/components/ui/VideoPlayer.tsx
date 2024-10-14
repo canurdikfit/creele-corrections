@@ -49,7 +49,7 @@ export default function VideoPlayer() {
             <button
                 className={isFirst ? 'cursor-not-allowed opacity-40' : 'opacity-100'}
                 onClick={() => handlePrev()}>
-                <IoIosArrowDropleft className="text-4xl" />
+                <IoIosArrowDropleft className="text-4xl xl:text-6xl" />
             </button>
 
             {domLoaded && (
@@ -58,7 +58,7 @@ export default function VideoPlayer() {
                     onSlideChange={onSlideChange}
                     slidesPerView={1}
                     centeredSlides
-                    className="mySwiper md:max-w-xl xl:max-w-[900px] w-fit max-w-[275px] h-48 md:h-[350px] xl:h-[550px]">
+                    className="mySwiper md:max-w-xl xl:max-w-[1100px] w-fit max-w-[275px] h-48 md:h-[350px] xl:h-[78vh]">
                     {VideosURL.map((items, index) => {
                         return (
                             <SwiperSlide
@@ -110,7 +110,7 @@ export default function VideoPlayer() {
             <button
                 className={isLast ? 'cursor-not-allowed opacity-40' : 'opacity-100'}
                 onClick={() => handleNext()}>
-                <IoIosArrowDropright className="text-4xl" />
+                <IoIosArrowDropright className="text-4xl xl:text-6xl" />
             </button>
         </div>
     )

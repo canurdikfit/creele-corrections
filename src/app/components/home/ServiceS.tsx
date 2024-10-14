@@ -16,20 +16,6 @@ export default function ServiceS() {
             />
             <div className="h-screen flex items-center justify-center">
                 <div className='relative z-10 text-center space-y-4 '>
-                    <motion.h2
-                        initial={{
-                            translateY: 100,
-                            opacity: 0
-                        }}
-                        whileInView={{
-                            translateY: 0,
-                            opacity: 1,
-                        }}
-                        transition={{
-                            ease: 'linear',
-                            duration: .5
-                        }}
-                    >Our Services</motion.h2>
                     <ServicesCarousel />
                 </div>
             </div>

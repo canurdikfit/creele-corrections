@@ -34,17 +34,17 @@ export default function ContactForm({ info }: { info?: boolean }) {
 
 
     return (
-        <div className='px-5 md:px-10 lg:px-20 xl:px-5 min-h-screen flex items-end justify-center mb-20'>
-            <div className='w-full xl:mt-72'>
+        <div className='px-5 md:px-10 lg:px-20 xl:px-5 min-h-screen flex items-end xl:pb-10 justify-center mb-20 auto'>
+            <div className='w-full '>
                 <div className='relative w-full pt-10 pb-5 flex h-fit items-center justify-center'>
                     <div className="relative grid lg:grid-cols-2 items-end z-10 max-w-5xl w-full">
                         <div>
                             <Image
                                 src={OnePunch}
                                 alt="PunchLine"
-                                className='xl:absolute bottom-1 -left-60 md:max-h-[600px] lg:max-h-[700px] w-auto ms-auto' />
+                                className='xl:absolute bottom-1 -left-40 md:max-h-[550px] w-auto ms-auto' />
                         </div>
-                        <div className='xl:pb-10 space-y-5 xl:pr-10 -mt-20 lg:mt-0'>
+                        <div className='xl:pb-10 xl:pt-10 space-y-5 xl:pr-10 -mt-20 lg:mt-0'>
                             <h4>Contact US</h4>
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">

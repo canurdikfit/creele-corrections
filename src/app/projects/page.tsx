@@ -2,11 +2,27 @@
 import Navbar from '../components/Navbar'
 import ReactFullpage from '@fullpage/react-fullpage'
 import ProjectImage from '../assets/images/project_image.png';
+import ProjectImage2 from  './../assets/artifacts/connect.png';
 import OurProjects from '../components/project/OurProjects';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 
 export default function Projects() {
+
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (window.fullpage_api) {
+                window.fullpage_api.moveTo(1);
+            }
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+
+
     return (
         <>
 
@@ -15,7 +31,7 @@ export default function Projects() {
                 navigation
                 credits={{
                     enabled: false
-                }}
+                }} 
                 touchSensitivity={5}
                 scrollingSpeed={1000}
                 render={() => {
@@ -56,9 +72,10 @@ const ProjectContent = [
         image: ProjectImage
     },
     {
-        heading: 'SOPO',
-        content: 'Lorem ipsum dolor sit amet consectetur. Pharetra nisl vel praesent sit. Nisl lectus pharetra ut venenatis in gravida. Sagittis pellentesque convallis quam scelerisque. Ut nisl adipiscing varius sed fames. Sagittis blandit turpis sit tincidunt nulla tellus enim sit. Consectetur egestas tortor fermentum blandit ',
-        projectUrl: 'sopo',
-        image: ProjectImage
+        type: '3D Short Film',
+        heading: 'Connect',
+        content: 'Unconditional love between parents and children can sometimes be hard to maintain, as seen in this musical about a strict father and his rebellious son.',
+        projectUrl: 'connect',
+        image: ProjectImage2
     },
 ]

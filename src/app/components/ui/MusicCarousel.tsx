@@ -2,7 +2,7 @@ import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
 import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
 import AppleMusicIcon from '../../assets/icons/apple-music.png';
 import SpotifyIcon from '../../assets/icons/spotify-icon.png';
-import MusicCard from '../../assets/images/music_card.png';
+import MusicCard from './../../assets/artifacts/satchel.webp';
 import { Audio } from 'react-loader-spinner';
 import React from 'react';
 import Image from 'next/image';
@@ -11,31 +11,24 @@ import Link from 'next/link';
 const Playlist = [
     {
         image: MusicCard,
-        title: 'Alan Walker - Faded',
+        title: 'Adupe',
         urlSrc: '/faded.mp3',
-        spotify: '',
-        apple: '',
+        spotify: 'https://open.spotify.com/track/05eNdzEkXKb7wa3ohABSaY?si=fbd01ba15832411a',
+        apple: 'https://music.apple.com/us/album/adupe/1592957622?i=1592957623',
     },
     {
         image: MusicCard,
-        title: 'ODUMODUBLVCK - JUJU',
+        title: 'Bata',
         urlSrc: '/juju.mp3',
-        spotify: '',
-        apple: '',
+        spotify: 'https://open.spotify.com/track/71BInqLSCmJxZ85Nh3UfaI?si=b57b37a412784f38',
+        apple: 'https://music.apple.com/us/album/bata/1592957622?i=1592957624',
     },
     {
         image: MusicCard,
-        title: 'Omah Lay - Moving',
+        title: 'Wonderful',
         urlSrc: '/moving.mp3',
-        spotify: '',
-        apple: '',
-    },
-    {
-        image: MusicCard,
-        title: 'Olamide - W',
-        urlSrc: '/w.mp3',
-        spotify: '',
-        apple: '',
+        spotify: 'https://open.spotify.com/track/7uKJlsDdmhczNNz2Lw8F68?si=ea80e83eb34546ee',
+        apple: 'https://music.apple.com/us/album/wonderful/1592957622?i=1592957625',
     },
 ]
 
@@ -91,7 +84,7 @@ export default function MusicCarousel() {
     return (
         <div className="flex flex-col items-center w-fit mx-auto md:items-end gap-3 py-10">
             <div className='flex flex-col md:flex-row md:items-center'>
-                <div className="shrink-0 relative z-10 w-72 md:w-auto md:h-60 xl:h-72 h-80">
+                <div className="shrink-0 relative z-10 w-72 md:w-auto md:h-60 xl:h-[350px] h-80">
                     <Image
                         src={Playlist[index].image}
                         alt='Music'
@@ -107,12 +100,12 @@ export default function MusicCarousel() {
                         onEnded={onEnded}
                     />
                     <div className="text-center md:text-left">
-                        <h4 className='md:text-4xl text-2xl xl:text-5xl'>{Playlist[index].title}</h4>
+                        <h4 className='md:text-4xl text-2xl xl:text-[55px]'>{Playlist[index].title}</h4>
                         <p className='font-medium md:text-lg xl:text-xl'>By Creele Studio</p>
                     </div>
                     <div className="flex flex-col-reverse md:flex-row gap-8 items-center justify-between">
                         <div className="flex items-center gap-5">
-                            <button onClick={togglePlayerMode} className='hover:text-[#FCBC0C] transition-colors ease-linear duration-200 text-5xl'>
+                            <button onClick={togglePlayerMode} className='hover:text-[#FCBC0C] transition-colors ease-linear duration-200 text-5xl xl:text-7xl'>
                                 {
                                     isPlaying ? (
                                         <FaPauseCircle />
@@ -137,7 +130,7 @@ export default function MusicCarousel() {
                                     src={AppleMusicIcon}
                                     alt='Icon'
                                     sizes='100%'
-                                    className='h-10 w-auto'
+                                    className='h-10 xl:h-16 w-auto'
                                 />
                             </Link>
                             <Link href={Playlist[index].spotify}>
@@ -145,7 +138,7 @@ export default function MusicCarousel() {
                                     src={SpotifyIcon}
                                     alt='Icon'
                                     sizes='100%'
-                                    className='h-10 w-auto'
+                                    className='h-10 xl:h-16 w-auto'
                                 />
                             </Link>
                         </div>
@@ -157,13 +150,13 @@ export default function MusicCarousel() {
                     className={index == 0 ? 'pointer-events-none opacity-40' : 'opacity-100'}
                     onClick={prevSong}
                 >
-                    <IoIosArrowDropleft className="text-5xl" />
+                    <IoIosArrowDropleft className="text-5xl xl:text-7xl" />
                 </button>
                 <button
                     className={index == Playlist.length - 1 ? 'opacity-40 pointer-events-none' : 'opacity-100'}
                     onClick={nextSong}
                 >
-                    <IoIosArrowDropright className="text-5xl" />
+                    <IoIosArrowDropright className="text-5xl xl:text-7xl" />
                 </button>
             </div>
         </div>

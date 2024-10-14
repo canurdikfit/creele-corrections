@@ -14,12 +14,17 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from 'next/image';
+import React from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 export default function Satchel() {
     const ProductBanner = 'https://www.youtube.com/watch?v=lNNHX1DaShI&t=12shttps://www.youtube.com/watch?v=lNNHX1DaShI&t=12s'
+    const [domLoaded, setDomLoaded] = React.useState(false);
+    React.useEffect(() => {
+        setDomLoaded(true);
+    }, []);
 
     useGSAP(() => {
         gsap.from('#movie', {
@@ -66,27 +71,27 @@ export default function Satchel() {
             <div
                 className='padding_product pb-20 lg:pt-40 pt-20 md:pt-32 about_sections relative'>
                 <div id='movie' className='rounded-3xl overflow-hidden h-[300px] md:h-[400px] lg:h-[480px] xl:h-[710px] relative z-10'>
-
-                    <ReactPlayer
-                        url={ProductBanner}
-                        height={'100%'}
-                        width={'100%'}
-                        light={'/poster.jpg'}
-                        controls={true}
-                        playing={true}
-                        volume={1}
-                        pip={true}
-                        stopOnUnmount={false}
-                        playsinline={true}
-                        config={{
-                            youtube: {
-                                playerVars: {
-                                    autoplay: 1
+                    {domLoaded && (
+                        <ReactPlayer
+                            url={ProductBanner}
+                            height={'100%'}
+                            width={'100%'}
+                            light={'/poster.jpg'}
+                            controls={true}
+                            playing={true}
+                            volume={1}
+                            pip={true}
+                            stopOnUnmount={false}
+                            playsinline={true}
+                            config={{
+                                youtube: {
+                                    playerVars: {
+                                        autoplay: 1
+                                    }
                                 }
-                            }
-                        }}
-                    />
-                    )
+                            }}
+                        />
+                    )}
 
                 </div>
                 <div className='bg-gradient-to-t from-black to-black/0 absolute inset-x-0 bottom-0 h-[35vh]' />
@@ -122,7 +127,26 @@ export default function Satchel() {
                 id='gallery-container'
                 className="about_sections bg-contain padding_product pt-32 bg-blend-overlay bg-black/40 relative space-y-5">
                 <div className='bg-gradient-to-b from-black to-black/0 absolute inset-x-0 top-0 h-[35vh]' />
-                <Image src={FeaturedImg} alt="Banner" className='relative z-20 h-full w-full object-contain gallery' />
+                {/* <Image src={FeaturedImg} alt="Banner" className='relative z-20 h-full w-full object-contain gallery' /> */}
+
+
+                <div id='movie' className='rounded-3xl overflow-hidden h-[300px] md:h-[400px] lg:h-[480px] xl:h-[710px] relative z-10'>
+                    {domLoaded && (
+                        <ReactPlayer
+                            url={'/Adupe.mp4'}
+                            height={'100%'}
+                            width={'100%'}
+                            light={'/adupe-poster.png'}
+                            controls={true}
+                            playing={true}
+                            volume={1}
+                            pip={true}
+                            stopOnUnmount={false}
+                            playsinline={true}
+                        />
+                    )}
+
+                </div>
 
                 <div className="grid md:grid-cols-3 gap-5">
                     <div className='gallery'>
@@ -144,7 +168,7 @@ export default function Satchel() {
                         <Image src={MaskImg3} alt="Banner" className='h-full w-full object-cover' />
                     </div>
                 </div>
-
+                <Image src={FeaturedImg} alt="Banner" className='relative z-20 h-full w-full object-contain gallery' />
                 <div className="grid md:grid-cols-3 gap-5">
                     <div className='gallery'>
                         <Image src={MaskImg} alt="Banner" className='h-full w-full object-cover' />

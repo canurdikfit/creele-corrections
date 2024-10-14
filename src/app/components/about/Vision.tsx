@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 
 export default function Vision() {
     return (
-        <section className='padding about_sections section vision'>
-            <div>
-                <div className="relative z-10 grid md:grid-cols-5 overflow-visible items-end mt-auto">
+        <section className='padding about_sections section vision pb-20 md:pb-0 items-center'>
+
+                <div className="relative z-10 grid md:grid-cols-5 overflow-visible items-center mt-auto">
                     <div className="md:col-span-3 space-y-5 lg:pb-10 xl:pb-20">
                         <motion.h2
                             initial={{
@@ -75,16 +75,16 @@ export default function Vision() {
 
                     </div>
                     <div className="md:col-span-2 items-center md:justify-end justify-center overflow-visible hidden md:flex">
-                        <div className="max-h-[600px] h-screen lg:h-[500px] xl:h-[700px] xl:max-h-[700px]">
+                        <div className="max-h-[600px] h-screen lg:h-[500px] xl:h-[700px] xl:max-h-[700px] relative">
                             <Image
                                 src={LadyHand}
                                 alt="Art Works"
                                 sizes='100%'
-                                className='object-cover object-bottom h-full w-full' />
+                                className='object-contain object-bottom h-full w-full' />
                         </div>
                     </div>
                 </div>
-            </div>
+     
         </section>
     )
 }

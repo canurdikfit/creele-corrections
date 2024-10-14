@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 export default function Footer() {
     return (
-        <footer className='w-screen relative z-10 padding section'>
+        <footer className='w-screen relative z-10 padding   section'>
             <div className='h-[600px] lg:h-[400px]'>
                 <div className='h-[600px] lg:h-[400px] flex flex-col justify-end pb-10 w-full gap-10'>
                     <div className="w-full flex items-end justify-between flex-wrap gap-10 md:pl-10 xl:pl-20">

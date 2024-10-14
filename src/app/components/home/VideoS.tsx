@@ -5,24 +5,11 @@ import VideoPlayer from "../ui/VideoPlayer"
 export default function VideoS() {
     return (
         <section className='flex-row padding text-center section video'>
+            <div className="absolute z-10 -top-1 inset-x-0 mix-blend-overlay bg-blend-overlay">
+                <h5 className='xl:text-[92px] text-center leading-none whitespace-nowrap tracking-[0.10em]'>SPOTLIGHT ON CREELE ANIMATION STUDIOS</h5>
+            </div>
             <div className="relative z-10">
                 <div className="h-screen xl:pb-12 flex flex-col justify-center xl:justify-end items-center">
-                    <motion.h3
-                        initial={{
-                            translateY: 100,
-                            opacity: 0
-                        }}
-                        whileInView={{
-                            translateY: 0,
-                            opacity: 1
-                        }}
-                        transition={{
-                            ease: 'linear',
-                            duration: .5
-                        }}
-                    >
-                        Spotlight on creele studios
-                    </motion.h3>
 
                     <VideoPlayer />
 

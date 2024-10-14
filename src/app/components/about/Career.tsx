@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function Career() {
     return (
-        <section className='section about_sections'>
+        <section className='section career'>
             <div className="padding pt-40 pb-16">
                 <motion.h2
                     initial={{
@@ -40,7 +40,7 @@ export default function Career() {
                     className='md:text-xl xl:text-2xl opacity-80 text-center'>
                     It takes great people to create greatness so we need you! Join us.
                 </motion.p>
-                <div className="grid gap-y-4 gap-x-8 md:grid-cols-2 xl:grid-cols-3 mt-10 mb-5">
+                <div className="grid gap-y-4 h-fit gap-x-8 md:grid-cols-2 xl:grid-cols-3 mt-10 mb-5">
                     {
                         AvailableCareer.map((items, index) => {
                             return (
@@ -59,13 +59,15 @@ export default function Career() {
                                         delay: index * 0.15
                                     }}
                                     key={index}
-                                    className="bg-[#2D2D37] px-4 py-4 rounded-xl flex items-center gap-5">
+                                    className="bg-[#2D2D37] px-4 py-4 h-fit rounded-xl flex items-center gap-5">
                                     <div className="h-20 w-20 shrink-0 rounded-xl bg-[#24242B] flex items-center justify-center">
                                         <items.icon className="text-4xl" />
                                     </div>
-                                    <div >
-                                        <h5 className="text-xl">{items.label}</h5>
-                                        <p className="text-sm opacity-80">{items.requirements}</p>
+                                    <div className='space-y-5'>
+                                        <div>
+                                            <h5 className="text-xl">{items.label}</h5>
+                                            <p className="text-sm opacity-80">{items.requirements}</p>
+                                        </div>
                                         <Link href={''} className="flex items-center w-fit ms-auto gap-2 justify-end hover:text-[#FBD40D]">
                                             <span className='text-sm'>View</span>
                                             <IoArrowForwardCircleOutline className="text-lg" />
@@ -76,7 +78,7 @@ export default function Career() {
                         })
                     }
                 </div>
-                <div className='flex items-center justify-center'>
+                <div className='flex h-fit items-center justify-center'>
                     <Link href={''} className='mx-auto'>
                         <motion.button
                             initial={{

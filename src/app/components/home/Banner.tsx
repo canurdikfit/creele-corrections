@@ -15,7 +15,10 @@ gsap.registerPlugin(useGSAP);
 
 export default function Banner(props: { route: fullpageApi }) {
     useGSAP(() => {
-        gsap.to('.latestNews', {
+        gsap.fromTo('.latestNews', {
+            translateY: -300,
+            opacity: 0,
+        }, {
             translateY: 0,
             opacity: 1,
             delay: 1,
@@ -25,11 +28,10 @@ export default function Banner(props: { route: fullpageApi }) {
         })
     }, [])
 
-
     return (
         <section className='banner px-5 md:px-10 lg:px-20 section'>
             <div className="space-y-4 md:space-y-4 overflow-y-hidden">
-                <div className="latestNews opacity-0 translate-y-48">
+                <div className="latestNews">
                     <Link href={'/'}>
                         <ShinyButton className="bg-white/20 backdrop-blur inline-block rounded-xl py-2.5 px-6" >
                             <span>Read the Latest News from Creele Studios</span>
@@ -37,10 +39,10 @@ export default function Banner(props: { route: fullpageApi }) {
                         </ShinyButton>
                     </Link>
                 </div>
-                <h1 className="latestNews opacity-0 translate-y-48">
+                <h1 className="latestNews">
                     Africa Stories, <br /> Global Pulse
                 </h1>
-                <p className='latestNews opacity-0 translate-y-48 lg:max-w-2xl max-w-xl mx-auto md:text-base text-sm text-pretty'>Creele is a family entertainment and trans-media production studio. Our mission is to magnificently portray the
+                <p className='latestNews lg:max-w-2xl max-w-xl mx-auto md:text-base text-sm text-pretty'>Creele is a family entertainment and trans-media production studio. Our mission is to magnificently portray the
                     creative brilliance of Africa through breathtaking storytelling of our rich heritage  using animated, interactive entertainment, sound and motion pictures</p>
             </div>
             <div className="absolute bottom-8 left-1/2 animate-bouncing">

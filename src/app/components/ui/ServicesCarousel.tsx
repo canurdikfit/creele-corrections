@@ -1,7 +1,7 @@
 import Animation from '../../assets/artifacts/services.png';
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from 'swiper/modules';
-import SoundDesignVid from '../../assets/motion_graphics/sounddesign.gif'
+import SoundDesignVid from './../../assets/images/sound-design.png';
 import AnimationVid from '../../assets/motion_graphics/Animation.gif'
 import StoryVid from '../../assets/motion_graphics/book2.gif'
 import { motion } from "framer-motion"
@@ -37,7 +37,7 @@ export default function ServicesCarousel() {
                     image: StoryVid,
                     label: 'STORYBOOKS & COMICS'
                 }].map((items, index) => (
-                    <SwiperSlide key={index} className='xl:max-w-80 lg:max-w-60 max-w-52'>
+                    <SwiperSlide key={index} className='xl:max-w-[350px] lg:max-w-60 max-w-52'>
                         <motion.div
                             initial={{
                                 translateY: 150

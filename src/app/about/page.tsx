@@ -3,16 +3,28 @@ import Studio from '../components/about/Studio'
 import Vision from '../components/about/Vision'
 import Navbar from '../components/Navbar'
 import ReactFullpage from '@fullpage/react-fullpage'
-import SoundDesignVid from '../assets/motion_graphics/sounddesign.gif'
+import SoundDesignVid from '../assets/images/sound-design.png';
 import AnimationVid from '../assets/motion_graphics/Animation.gif'
 import StoryVid from '../assets/motion_graphics/book2.gif'
 import OurServices from '../components/about/OurServices'
 import ServiceImage from '../assets/artifacts/services.png';
 import Career from '../components/about/Career'
-
-
+import Footer from '../components/Footer'
+import { useEffect } from 'react'
 
 export default function About() {
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (window.fullpage_api) {
+                window.fullpage_api.moveTo(1);
+            }
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+
     return (
         <>
             <Navbar />
@@ -20,7 +32,7 @@ export default function About() {
                 navigation
                 credits={{
                     enabled: false
-                }}
+                }}  
                 touchSensitivity={5}
                 scrollingSpeed={1000}
                 render={() => {
@@ -42,6 +54,7 @@ export default function About() {
                                 })
                             }
                             <Career />
+                            <Footer />
                         </ReactFullpage.Wrapper>
                     )
                 }
